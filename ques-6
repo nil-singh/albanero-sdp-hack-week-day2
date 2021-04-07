@@ -1,0 +1,50 @@
+#include <bits/stdc++.h>
+#include <iostream>
+using namespace std;
+
+int noOfPostiveEle(int arr[],int n){
+    int num=0;
+    for(int i=0; i<n; i++){
+        if(arr[i]>0){
+            num++;
+        }
+    }
+
+    return num;
+}
+
+int sumOfNegativeEle(int arr[],int n){
+    int sum=0;
+    for(int i=0; i<n; i++){
+        if(arr[i]<0){
+            sum=sum+arr[i];
+        }
+    }
+    
+    return sum;
+}
+
+int main(){
+    cout<<"Enter the number of elements in an array "<<endl;
+    int n;
+    cin>>n;
+
+    cout<<"Enter the values of each element in an array "<<endl;
+    int arr[n];
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
+    }
+
+    int num;
+    int sum;
+    num=noOfPostiveEle(arr,n);
+    sum=sumOfNegativeEle(arr,n);
+
+    int newArray[]={num,sum};
+    cout<<"["<<newArray[0]<<", "<<newArray[1]<<"]<<endl;
+    
+
+
+    return 0;
+
+}
